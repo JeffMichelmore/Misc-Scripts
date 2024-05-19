@@ -1,20 +1,14 @@
 <#
 This script can be used as a template to make simple API calls to Azure Data Explorer's Run Query API.
 
-# Required Modules
+# Required Module
 Install-Module -Name Az.Accounts -Force -AllowClobber
-Install-Module -Name Az.Resources -Force -AllowClobber
-Install-Module -Name Az.Kusto -Force -AllowClobber
-Install-Module -Name PowerShellGet -Force -AllowClobber
-
-Az-Context is needed so it may be best to add a check if the AZ modules are installed 
-then check if AzContext is populated or Get-AzContext everytime.
 
 $clusterName, $databaseName, and $query must be populated.
 #>
 
-# Get the Azure context
-# $context = Get-AzContext
+# Get the Azure account context
+$context = Get-AzContext
 
 # Set the Azure Data Explorer cluster details
 $clusterName = ""
